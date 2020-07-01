@@ -18,10 +18,12 @@ def index():
     
     elif request.method == 'POST':
         name = request.form['name']
-        num1 = int(request.form['num1'])
-        num2 = int(request.form['num2'])
+        num1 = float(request.form['num1'])
+        num2 = float(request.form['num2'])
+        if num2 == 0:
+            return redirect(url_for('index'))
         res = num1 / num2
-        
+        print(res)
         with DB() as db:
             db.execute('INSERT INTO calc(name, num1, num2, result) VALUES (?, ?, ?, ?)', (name, num1, num2, res))
 

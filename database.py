@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS calc
     (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        num1 INTEGER NOT NULL,
-        num2 INTEGER NOT NULL,
+        num1 DOUBLE(1, 2) NOT NULL,
+        num2 DOUBLE(1, 2) NOT NULL,
         result DOUBLE(1, 2) NOT NULL
     )
 ''')
